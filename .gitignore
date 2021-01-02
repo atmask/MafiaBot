@@ -4,4 +4,5 @@ __pycache__/
 credentials.py
 *.pickle
 *.log
-.bot-env/
+bot-env/
+bot_logo.png
