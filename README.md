@@ -47,6 +47,8 @@ In order to run correctly the bot needs the following permissions set for it, or
 ## Running the bot yourself
 You can run the bot yourself by cloning this repo, renaming `credentials.example.py` to `credentials.py` and adding a bot token and your user ID, then running `main.py`.
 
+Your user id is obtained by turning on developer mode, right your user name in the members section of a server and then selecting copy id.
+
 There are a few additional commands bot owners can run, the default prefix is `%%`:
 
 * **%%stats** - gives some info on how many servers and active games the bot is currently running
