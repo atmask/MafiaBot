@@ -1,2 +1,6 @@
-discordToken = ''
-ownerID = 0
+discordToken = 'Nzk0OTcyODcwMjk1NDIwOTMw.X_CmLg.J-ewXQNR8Ns2ezNRmLEwc549yKg'
+ownerID = 9845
+# PUBLIC_KEY = 'adbcb51ea688c1d7c61981ebdd6a15eca488e23c68670b271e23e967cabaafed'
+# CLIENT_SECRET = 'jVSTKuAFsAxmBbf7Z00ithR-T7SfNEGX'
+# CLIENT_ID = '794972870295420930'
+# BOT_TOKEN = 'Nzk0OTcyODcwMjk1NDIwOTMw.X_CmLg.J-ewXQNR8Ns2ezNRmLEwc549yKg'

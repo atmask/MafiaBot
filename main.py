@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-from credentials import discordToken
+from settings import DISCORD_TOKEN
 from mafia import Mafia
 
 m = Mafia()
-m.run(discordToken)
+m.run(DISCORD_TOKEN)

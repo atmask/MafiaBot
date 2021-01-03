@@ -71,7 +71,7 @@ class Game:
         await message.channel.send(
             embed=discord.Embed(
                 title="Mafia :dagger:",
-                description="Welcome to the village of Upper Lowerstoft, it's normally quite a peaceful place but recently something *a bit sinister* has been happening when everyone's tucked up in bed...\n\nTo join the game message `{0}join`, then `{0}start` when there are at least {1} players. To leave the game at any point message `{0}leave`.".format(
+                description="Welcome to the village of Kings Town (yes the village that is also a town). It is the year 1874 and while it's normally quite a peaceful place...recently something *a bit sinister* has been happening when everyone's tucked up in bed...\n\nTo join the game message `{0}join`, then `{0}start` when there are at least {1} players. To leave the game at any point message `{0}leave`.".format(
                     self.prefix, self.minPlayers
                 ),
                 colour=Colours.DARK_RED,
@@ -95,7 +95,7 @@ class Game:
                 else:
                     try:
                         embed = discord.Embed(
-                            description="Welcome to Upper Lowerstoft, we hope you have a peaceful visit.\n\nDuring the game I will send you messages here, if you need to leave at any point message `{}leave` in the game channel.".format(
+                            description="Welcome to Kings Town , we hope you have a peaceful visit.\n\nDuring the game I will send you messages here, if you need to leave at any point message `{}leave` in the game channel.".format(
                                 self.prefix
                             ),
                             colour=Colours.DARK_BLUE,

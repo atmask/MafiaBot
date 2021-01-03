@@ -10,8 +10,16 @@ def botOwner(command) :
 
 def botManager(command) :
     async def guard(bot, message, args) :
+        print("\
+        message.author.id: {}\
+        bot.settings['bot']['owner']: {}\
+        bot.settings['bot']['manage']: {}".format(type(message.author.id), type(bot.settings["bot"]["owner"]), bot.settings["bot"]["manage"]))
+
+
         if message.author.id == bot.settings["bot"]["owner"] or message.author.id in bot.settings["bot"]["manage"] :
             await command(bot, message, args)
+        else:
+            print('You do not have permissions.')
 
     return guard
 

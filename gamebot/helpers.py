@@ -1,5 +1,5 @@
 import discord
-from credentials import ownerID
+from settings import OWNER_ID
 
 def isDM(message) :
     return (type(message.channel) == discord.DMChannel)

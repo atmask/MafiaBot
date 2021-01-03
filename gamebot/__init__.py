@@ -5,7 +5,7 @@ import traceback
 
 import discord
 
-from credentials import ownerID
+from settings import OWNER_ID
 from gamebot.decorators import guard
 from gamebot.helpers import (hasPrefix, userInActiveGame, isDM, parseMessage, Colours)
 from mafia.game import (Game, commands)
@@ -60,7 +60,7 @@ class GameBot(discord.Client) :
             # first run
             self.settings["bot"] = {
                 "prefix" : "%%",
-                "owner"  : ownerID,
+                "owner"  : OWNER_ID,
                 "manage" : []
             }
 
@@ -180,8 +180,10 @@ class GameBot(discord.Client) :
         await self.updatePresenceCount()
 
     async def on_message(self, message) :
+        print('Recieved a message: {}'.format(message))
         try :
             globalPrefix = self.settings["bot"]["prefix"]
+            print('Global PREFIX: {}'.format(globalPrefix))
             activeGame = userInActiveGame(message.author.id, self.active)
 
             if message.guild and message.guild.id in self.settings :
@@ -194,6 +196,8 @@ class GameBot(discord.Client) :
 
             else :
                 guildPrefix = False
+
+            print('Guild PREFIX: {}'.format(guildPrefix))
 
             if guildPrefix and hasPrefix(message, guildPrefix) :
                 guildMatched = await self.handleCommand(message, guildPrefix, self.guildHandlers)
@@ -226,11 +230,13 @@ class GameBot(discord.Client) :
         command, args = parseMessage(message, prefix)
 
         if command in handlers and handlers[command] :
+            print('handling command:{} and extra: {}'.format(command, handlers[command]))
             handle = getattr(self, handlers[command])
             await handle(message, args)
             return True
 
         else :
+            print('err')
             return False
 
     # Command Handlers
