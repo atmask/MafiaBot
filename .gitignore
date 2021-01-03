@@ -6,4 +6,4 @@ credentials.py
 *.log
 bot-env/
 bot_logo.png
-*.sh
+envvar.sh
