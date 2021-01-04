@@ -187,7 +187,7 @@ class GameBot(discord.Client) :
             activeGame = userInActiveGame(message.author.id, self.active)
 
             if message.guild and message.guild.id in self.settings :
-                # message send within a guild (so in a channel)
+                # message sent within a guild (so in a channel)
                 guildPrefix = self.settings[message.guild.id]["prefix"]
 
             elif (isDM(message) and activeGame) :
@@ -204,6 +204,7 @@ class GameBot(discord.Client) :
                 gameMatched = await self.handleCommand(message, guildPrefix, self.handlers)
 
                 if not (guildMatched or gameMatched) :
+                    print('Not guild or game matched command')
                     sentInDMWithActiveGame = activeGame and isDM(message)
                     recognisedGuild = message.guild and message.guild.id in self.settings
                     sentInActiveChannel = recognisedGuild and message.channel.id in self.settings[message.guild.id]["activeChannels"]
@@ -218,7 +219,7 @@ class GameBot(discord.Client) :
                             id = message.channel.id
 
                         if id in self.active :
-                            await self.active[id]["game"].on_message(message)
+                            await self.active[id]["game"].on_message(message) # pass to game.py to handle game related commands
 
             if hasPrefix(message, globalPrefix) :
                 await self.handleCommand(message, globalPrefix, self.globalHandlers)
